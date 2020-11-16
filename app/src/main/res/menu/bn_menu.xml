@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/bn_uno"
-        android:title="1"
-        android:icon="@drawable/ic_home"/>
-
-    <item
-        android:id="@+id/bn_dos"
-        android:title="2"
+        android:id="@+id/bn_dashboard"
+        android:title="Dashboard"
         android:icon="@drawable/ic_dashboard"/>
 
     <item
-        android:id="@+id/bn_tres"
-        android:title="3"
+        android:id="@+id/bn_home"
+        android:title="Home"
+        android:icon="@drawable/ic_home"/>
+
+    <item
+        android:id="@+id/bn_notification"
+        android:title="Notificaciones"
         android:icon="@drawable/ic_notification"/>
 
 </menu>
