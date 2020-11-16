@@ -28,13 +28,13 @@ public class PrincipalActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         /* Home Fragment en la deque list*/
-        integerDeque.push(R.id.bn_uno);
+        integerDeque.push(R.id.bn_home);
 
         /*Cargar fragmento*/
         loadFragment(new HomeFragment());
 
         /* Fragment seleccionado por default */
-        bottomNavigationView.setSelectedItemId(R.id.bn_uno);
+        bottomNavigationView.setSelectedItemId(R.id.bn_home);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -45,14 +45,14 @@ public class PrincipalActivity extends AppCompatActivity {
                 /*Condición*/
                 if (integerDeque.contains(id)) {
                     /*Cuando la lista deque contiene el id seleccionada*/
-                    if (id == R.id.bn_uno) {
+                    if (id == R.id.bn_home) {
                         /*Cuando el id seleccionado es igual a la id del fragmento home*/
                         if (integerDeque.size() != 1) {
                             /*Cuando el tamaño de la lista deque no es igual a 1*/
                             if (flag) {
                                 /* Cuando flag es verdadero*/
                                 /* Se agrega el fragment home en la lista deque*/
-                                integerDeque.addFirst(R.id.bn_uno);
+                                integerDeque.addFirst(R.id.bn_home);
                                 /* Setea flag como false */
                                 flag = false;
                             }
@@ -77,17 +77,17 @@ public class PrincipalActivity extends AppCompatActivity {
 
     private Fragment getFragment(int itemId) {
         switch (itemId) {
-            case R.id.bn_dos:
+            case R.id.bn_dashboard:
                 /*Inserta el checked en el menú*/
                 bottomNavigationView.getMenu().getItem(0).setChecked(true);
                 /*Return dashboard fragment*/
                 return new DashboardFragment();
-            case R.id.bn_uno:
+            case R.id.bn_home:
                 /*Inserta el checked en el menú*/
                 bottomNavigationView.getMenu().getItem(1).setChecked(true);
                 /*Return Home fragment*/
                 return  new HomeFragment();
-            case R.id.bn_tres:
+            case R.id.bn_notification:
                 /*Inserta el checked en el menú*/
                 bottomNavigationView.getMenu().getItem(2).setChecked(true);
                 /*Return Notification fragment*/
