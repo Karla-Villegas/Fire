@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item
+        android:id="@+id/bn_uno"
+        android:title="1"
+        android:icon="@drawable/ic_home"/>
+
+    <item
+        android:id="@+id/bn_dos"
+        android:title="2"
+        android:icon="@drawable/ic_dashboard"/>
+
+    <item
+        android:id="@+id/bn_tres"
+        android:title="3"
+        android:icon="@drawable/ic_notification"/>
+
 </menu>
