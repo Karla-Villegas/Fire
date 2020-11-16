@@ -73,6 +73,8 @@ public class PrincipalActivity extends AppCompatActivity {
         });
     }
 
+    /*Hooola*/
+
     private Fragment getFragment(int itemId) {
         switch (itemId) {
             case R.id.bn_dos:
