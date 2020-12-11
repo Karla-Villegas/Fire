@@ -2,9 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/bn_dashboard"
-        android:title="Dashboard"
-        android:icon="@drawable/ic_dashboard"/>
+        android:id="@+id/bn_ajustes"
+        android:title="Ajustes"
+        android:icon="@drawable/ic_notification"/>
 
     <item
         android:id="@+id/bn_home"
@@ -12,8 +12,8 @@
         android:icon="@drawable/ic_home"/>
 
     <item
-        android:id="@+id/bn_notification"
-        android:title="Notificaciones"
-        android:icon="@drawable/ic_notification"/>
+        android:id="@+id/bn_dashboard"
+        android:title="Dashboard"
+        android:icon="@drawable/ic_dashboard"/>
 
 </menu>

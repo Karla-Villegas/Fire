@@ -77,21 +77,22 @@ public class PrincipalActivity extends AppCompatActivity {
 
     private Fragment getFragment(int itemId) {
         switch (itemId) {
-            case R.id.bn_dashboard:
+            case R.id.bn_ajustes:
                 /*Inserta el checked en el menú*/
                 bottomNavigationView.getMenu().getItem(0).setChecked(true);
-                /*Return dashboard fragment*/
-                return new DashboardFragment();
+                /*Return Notification fragment*/
+                return new NotificationFragment();
             case R.id.bn_home:
                 /*Inserta el checked en el menú*/
                 bottomNavigationView.getMenu().getItem(1).setChecked(true);
                 /*Return Home fragment*/
                 return  new HomeFragment();
-            case R.id.bn_notification:
+            case R.id.bn_dashboard:
                 /*Inserta el checked en el menú*/
                 bottomNavigationView.getMenu().getItem(2).setChecked(true);
-                /*Return Notification fragment*/
-                return new NotificationFragment();
+                /*Return dashboard fragment*/
+                return new DashboardFragment();
+
         }
         /*Insertar checked default home fragment*/
         bottomNavigationView.getMenu().getItem(1).setChecked(true);

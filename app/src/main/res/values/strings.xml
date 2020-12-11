@@ -2,4 +2,6 @@
     <string name="app_name">Fire</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="textoPrincipal">Es un trastorno mental que afecta a las funciones cognitivas de nuestro organismo como pueden ser la memoria, la percepción y la resolución de problemas.</string>
+
 </resources>
