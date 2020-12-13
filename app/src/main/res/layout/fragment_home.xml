@@ -26,7 +26,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="190dp"
-                    android:background="@drawable/mental"/>
+                    android:background="#51eaea"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -56,9 +56,8 @@
                         android:gravity="center_horizontal"
                         android:text="Trastornos Cognitivos"
                         android:textAlignment="center"
-                        android:textColor="#000"
-                        android:textSize="24sp"
-                        android:textStyle="italic" />
+                        android:textColor="#fb3569"
+                        android:textSize="24sp"/>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -89,15 +88,16 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_margin="5dp"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:background="@drawable/bgcard_principal">
 
                         <TextView
                             android:id="@+id/textSubtitulo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="32dp"
-                            android:fontFamily="sans-serif"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="sans-serif-light"
                             android:text="¿Qué es?"
                             android:textColor="#000"
                             android:textSize="18sp"
@@ -108,8 +108,10 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
                             android:text="@string/textoPrincipal"
                             android:justificationMode="inter_word"
+                            android:textSize="15sp"
                             android:textColor="#000" />
                     </LinearLayout>
 
@@ -138,7 +140,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="#4e8d7c">
+                            android:background="#fb3569">
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -147,6 +149,8 @@
                                 android:gravity="center_horizontal"
                                 android:text="¿Cómo nos afecta?"
                                 android:textAlignment="center"
+                                android:fontFamily="sans-serif-light"
+                                android:textStyle="bold"
                                 android:textColor="#fff"
                                 android:textSize="16dp" />
 
@@ -155,70 +159,104 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            >
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_margin="3dp"
-                                android:text="* Alteran las funciones cognitivas de la persona que los padece." />
+                                android:layout_margin="5dp"
+                                android:textColor="@color/black"
+                                android:text="* Dificultades de atencion, concentracion y orientacion." />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_margin="3dp"
-                                android:text="* Alteran las funciones cognitivas de la persona que los padece." />
+                                android:layout_margin="5dp"
+                                android:textColor="@color/black"
+                                android:text="* Desestructuracion de pensamiento y de la percepcion." />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_margin="3dp"
-                                android:text="* Alteran las funciones cognitivas de la persona que los padece." />
-
-
+                                android:layout_margin="5dp"
+                                android:textColor="@color/black"
+                                android:text="* Incapacidad de recordar cosas, cansancio, cambios en la personalidad." />
                         </LinearLayout>
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-
-                <ImageView
-                    android:id="@+id/img1"
-                    android:layout_width="100dp"
-                    android:layout_height="150dp"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/purple_200"
-                    app:layout_constraintEnd_toStartOf="@id/img2"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/cardSecundario" />
-
-                <ImageView
-                    android:id="@+id/img2"
-                    android:layout_width="100dp"
-                    android:layout_height="150dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="24dp"
-                    android:layout_marginRight="24dp"
-                    android:background="@color/purple_200"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/img1"
-                    app:layout_constraintTop_toBottomOf="@+id/cardSecundario" />
-
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginLeft="32dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
                     android:layout_marginTop="24dp"
-                    android:text="¿Cómo Prevenirlo?"
-                    android:textColor="#000"
-                    android:textSize="18dp"
-                    android:fontFamily="sans-serif"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/img1" />
+                    app:layout_constraintTop_toBottomOf="@+id/cardSecundario">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="sans-serif"
+                        android:text="¿Cómo Prevenirlo?"
+                        android:textColor="#000"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="sans-serif"
+                        android:text="Es importante que se realicen ejercicios destinados a mantener la actividad de las funciones cognitivas."
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginBottom="3dp"
+                        android:text="* La lectura del periódico."
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginBottom="3dp"
+                        android:text="* Hacer crucigramas."
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginBottom="3dp"
+                        android:text="* Mantener la relación con el entorno familiar y de amigos."
+                        android:textColor="@color/black" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginBottom="3dp"
+                        android:text="* Ver las noticias y saber lo que pasa en el alrededor."
+                        android:textColor="@color/black" />
+
+
+                </LinearLayout>
+
 
 
 
