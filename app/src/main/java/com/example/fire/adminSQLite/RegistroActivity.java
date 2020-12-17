@@ -1,6 +1,4 @@
-package com.example.fire;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.fire.adminSQLite;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,15 +7,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.fire.adminSQLite.DaoDB;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class RegistroActivity extends AppCompatActivity {
+import com.example.fire.MainActivity;
+import com.example.fire.R;
+
+public class RegistroActivity  extends AppCompatActivity {
 
     EditText txt_RegNombre, txt_RegUsuario, txt_RegContraseña;
     Button btn_registrar;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
@@ -27,6 +29,7 @@ public class RegistroActivity extends AppCompatActivity {
         btn_registrar = (Button)findViewById(R.id.btn_registrar);
 
         final DaoDB daoDB = new DaoDB(getApplicationContext());
+
 
         btn_registrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,7 +45,6 @@ public class RegistroActivity extends AppCompatActivity {
                 RegistroActivity.this.startActivity(i);
             }
         });
+
     }
-
-
 }

@@ -100,7 +100,7 @@
                             android:fontFamily="sans-serif-light"
                             android:text="¿Qué es?"
                             android:textColor="#000"
-                            android:textSize="18sp"
+                            android:textSize="20sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -111,7 +111,7 @@
                             android:layout_marginBottom="10dp"
                             android:text="@string/textoPrincipal"
                             android:justificationMode="inter_word"
-                            android:textSize="15sp"
+                            android:textSize="16sp"
                             android:textColor="#000" />
                     </LinearLayout>
 
@@ -152,7 +152,7 @@
                                 android:fontFamily="sans-serif-light"
                                 android:textStyle="bold"
                                 android:textColor="#fff"
-                                android:textSize="16dp" />
+                                android:textSize="18dp" />
 
                         </LinearLayout>
 
@@ -167,6 +167,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_margin="5dp"
                                 android:textColor="@color/black"
+                                android:textSize="16sp"
                                 android:text="* Dificultades de atencion, concentracion y orientacion." />
 
                             <TextView
@@ -174,6 +175,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_margin="5dp"
                                 android:textColor="@color/black"
+                                android:textSize="16sp"
                                 android:text="* Desestructuracion de pensamiento y de la percepcion." />
 
                             <TextView
@@ -181,6 +183,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_margin="5dp"
                                 android:textColor="@color/black"
+                                android:textSize="16sp"
                                 android:text="* Incapacidad de recordar cosas, cansancio, cambios en la personalidad." />
                         </LinearLayout>
 
@@ -197,62 +200,63 @@
                     android:layout_marginRight="16dp"
                     android:layout_marginBottom="8dp"
                     android:orientation="vertical"
+                    android:background="#1aa6b7"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cardSecundario">
 
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="32dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:fontFamily="sans-serif"
-                        android:text="¿Cómo Prevenirlo?"
-                        android:textColor="#000"
-                        android:textSize="18dp" />
+                    <androidx.appcompat.widget.Toolbar
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="#f56a79">
 
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:fontFamily="sans-serif"
-                        android:text="Es importante que se realicen ejercicios destinados a mantener la actividad de las funciones cognitivas."
-                        android:textColor="#000" />
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:text="¿Cómo Prevenirlo?"
+                            android:textColor="#fff"
+                            android:textSize="18dp"
+                            android:textAlignment="center"
+                            android:gravity="center_horizontal" />
 
+                    </androidx.appcompat.widget.Toolbar>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="24dp"
                         android:layout_marginBottom="3dp"
+                        android:textSize="16sp"
                         android:text="* La lectura del periódico."
-                        android:textColor="@color/black" />
+                        android:textColor="#fff" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="24dp"
                         android:layout_marginBottom="3dp"
+                        android:textSize="16sp"
                         android:text="* Hacer crucigramas."
-                        android:textColor="@color/black" />
+                        android:textColor="#fff" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="24dp"
                         android:layout_marginBottom="3dp"
+                        android:textSize="16sp"
                         android:text="* Mantener la relación con el entorno familiar y de amigos."
-                        android:textColor="@color/black" />
+                        android:textColor="#fff" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="24dp"
                         android:layout_marginBottom="3dp"
+                        android:textSize="16sp"
                         android:text="* Ver las noticias y saber lo que pasa en el alrededor."
-                        android:textColor="@color/black" />
+                        android:textColor="#fff" />
 
 
                 </LinearLayout>

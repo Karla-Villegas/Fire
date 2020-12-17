@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fire.adminSQLite.DaoDB;
+import com.example.fire.adminSQLite.RegistroActivity;
 
 public class MainActivity extends AppCompatActivity {
 
