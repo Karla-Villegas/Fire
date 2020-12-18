@@ -36,7 +36,7 @@ public class DashboardFragment extends Fragment {
         agregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(), Agenda.class);
+                Intent i = new Intent(getActivity(), ScheduleActivity.class);
                 startActivity(i);
 
             }

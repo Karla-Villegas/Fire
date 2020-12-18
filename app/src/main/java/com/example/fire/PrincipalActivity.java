@@ -81,7 +81,7 @@ public class PrincipalActivity extends AppCompatActivity {
                 /*Inserta el checked en el menú*/
                 bottomNavigationView.getMenu().getItem(0).setChecked(true);
                 /*Return Notification fragment*/
-                return new NotificationFragment();
+                return new SettingsFragment();
             case R.id.bn_home:
                 /*Inserta el checked en el menú*/
                 bottomNavigationView.getMenu().getItem(1).setChecked(true);

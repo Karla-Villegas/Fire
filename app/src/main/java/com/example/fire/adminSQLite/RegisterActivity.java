@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.fire.MainActivity;
 import com.example.fire.R;
 
-public class RegistroActivity  extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
 
     EditText txt_RegNombre, txt_RegUsuario, txt_RegContraseña;
     Button btn_registrar;
@@ -21,7 +21,7 @@ public class RegistroActivity  extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registro);
+        setContentView(R.layout.activity_register);
 
         txt_RegNombre = (EditText)findViewById(R.id.txt_RegNombre);
         txt_RegUsuario = (EditText)findViewById(R.id.txt_RegUsuario);
@@ -39,10 +39,10 @@ public class RegistroActivity  extends AppCompatActivity {
                         txt_RegUsuario.getText().toString(),
                         txt_RegContraseña.getText().toString()
                 );
-                Toast.makeText(RegistroActivity.this, "agregado correctamente", Toast.LENGTH_LONG).show();
+                Toast.makeText(RegisterActivity.this, "agregado correctamente", Toast.LENGTH_LONG).show();
 
-                Intent i = new Intent(RegistroActivity.this, MainActivity.class);
-                RegistroActivity.this.startActivity(i);
+                Intent i = new Intent(RegisterActivity.this, MainActivity.class);
+                RegisterActivity.this.startActivity(i);
             }
         });
 

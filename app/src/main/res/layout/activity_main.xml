@@ -91,7 +91,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="9dp"
-            android:elevation="10dp"
             android:padding="3dp"
             android:text="Inicio" />
 

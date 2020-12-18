@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fire.adminSQLite.DaoDB;
-import com.example.fire.adminSQLite.RegistroActivity;
+import com.example.fire.adminSQLite.RegisterActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 /*.......INTEN PRINCIPAL.......*/
-                Intent intentRegistro = new Intent(MainActivity.this, RegistroActivity.class);
+                Intent intentRegistro = new Intent(MainActivity.this, RegisterActivity.class);
                 startActivity(intentRegistro);
             }
         });
