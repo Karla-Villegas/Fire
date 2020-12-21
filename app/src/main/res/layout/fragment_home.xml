@@ -26,7 +26,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="190dp"
-                    android:background="#51eaea"/>
+                    android:src="@drawable/banner2"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -200,7 +200,6 @@
                     android:layout_marginRight="16dp"
                     android:layout_marginBottom="8dp"
                     android:orientation="vertical"
-                    android:background="#1aa6b7"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -209,7 +208,7 @@
                     <androidx.appcompat.widget.Toolbar
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
-                        android:background="#f56a79">
+                        android:background="#51eaea">
 
                         <TextView
                             android:id="@+id/textView2"
@@ -230,7 +229,8 @@
                         android:layout_marginBottom="3dp"
                         android:textSize="16sp"
                         android:text="* La lectura del periódico."
-                        android:textColor="#fff" />
+                        android:textColor="@color/black"
+                        />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -239,7 +239,8 @@
                         android:layout_marginBottom="3dp"
                         android:textSize="16sp"
                         android:text="* Hacer crucigramas."
-                        android:textColor="#fff" />
+                        android:textColor="@color/black"
+                        />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -248,7 +249,7 @@
                         android:layout_marginBottom="3dp"
                         android:textSize="16sp"
                         android:text="* Mantener la relación con el entorno familiar y de amigos."
-                        android:textColor="#fff" />
+                        android:textColor="@color/black"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -256,7 +257,7 @@
                         android:layout_marginBottom="3dp"
                         android:textSize="16sp"
                         android:text="* Ver las noticias y saber lo que pasa en el alrededor."
-                        android:textColor="#fff" />
+                        android:textColor="@color/black"/>
 
 
                 </LinearLayout>

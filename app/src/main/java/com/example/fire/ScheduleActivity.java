@@ -1,12 +1,14 @@
 package com.example.fire;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -15,6 +17,7 @@ import java.util.Calendar;
 public class ScheduleActivity extends AppCompatActivity {
 
     TextView tv, tvhora;
+    Button guardar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,9 @@ public class ScheduleActivity extends AppCompatActivity {
 
         tv = (TextView) findViewById(R.id.tv);
         tvhora = (TextView) findViewById(R.id.tvHora);
+        guardar = (Button) findViewById(R.id.GuardarTarea);
+
+
     }
 
     public void openCalendar(View view) {
@@ -57,7 +63,9 @@ public class ScheduleActivity extends AppCompatActivity {
                 tvhora.setText(hourOfDay + ":" + minute);
 
             }
-        }, hora, minuto, true);
+        }, hora, minuto, false);
         tpd.show();
     }
+
+
 }
