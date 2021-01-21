@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,7 +17,7 @@ import android.widget.TimePicker;
 import java.util.Calendar;
 public class ScheduleActivity extends AppCompatActivity {
 
-    TextView tv, tvhora;
+    TextView tv, tvhora, titulo_agenda;
     Button guardar;
 
     @Override
@@ -29,6 +30,13 @@ public class ScheduleActivity extends AppCompatActivity {
         tv = (TextView) findViewById(R.id.tv);
         tvhora = (TextView) findViewById(R.id.tvHora);
         guardar = (Button) findViewById(R.id.GuardarTarea);
+        titulo_agenda = findViewById(R.id.titulo_agenda);
+
+
+
+        Typeface DisplayRegular = Typeface.createFromAsset(getAssets(),"font/SFUIDisplayRegular.otf");
+        titulo_agenda = findViewById(R.id.titulo_agenda);
+        titulo_agenda.setTypeface(DisplayRegular);
 
 
     }

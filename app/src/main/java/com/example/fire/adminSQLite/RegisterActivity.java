@@ -1,10 +1,12 @@
 package com.example.fire.adminSQLite;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -16,6 +18,7 @@ import com.example.fire.R;
 public class RegisterActivity extends AppCompatActivity {
 
     EditText txt_RegNombre, txt_RegUsuario, txt_RegContraseña;
+    TextView Txt_titulo;
     Button btn_registrar;
 
     @Override
@@ -27,6 +30,11 @@ public class RegisterActivity extends AppCompatActivity {
         txt_RegUsuario = (EditText)findViewById(R.id.txt_RegUsuario);
         txt_RegContraseña = (EditText)findViewById(R.id.txt_RegContraseña);
         btn_registrar = (Button)findViewById(R.id.btn_registrar);
+
+        Typeface DisplayRegular = Typeface.createFromAsset(getAssets(),"font/SFUIDisplayRegular.otf");
+        Txt_titulo = findViewById(R.id.Txt_titulo);
+        Txt_titulo.setTypeface(DisplayRegular);
+
 
         final DaoDB daoDB = new DaoDB(getApplicationContext());
 
