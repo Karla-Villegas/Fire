@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/agenda"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ScheduleActivity"
     android:background="@drawable/main_header_selector"
-    android:id="@+id/agenda">
+    tools:context=".ScheduleActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -59,106 +58,136 @@
             android:background="@drawable/button_round"
             android:hint="Descripción de tarea"
             android:inputType="text"
-            android:padding="3dp"
-            />
+            android:padding="3dp" />
 
 
         <LinearLayout
-            android:layout_width="150dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="5dp"
-            android:orientation="horizontal">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="2"
+            android:layout_marginTop="10dp"
+            >
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginLeft="10dp">
 
-                <ImageView
-                    android:layout_width="40dp"
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_margin="5dp">
+
+
+                <LinearLayout
+                    android:layout_width="150dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/ic_calendar"
-                    />
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_calendar" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="50dp"
+                            android:text="Elige una fecha" />
+
+                        <Button
+                            android:id="@+id/boton1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:onClick="openCalendar" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/tv"
+                    android:layout_width="140dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
-                    android:text="Elige una fecha"
-                    android:layout_gravity="center"/>
+                    android:background="@drawable/button_round"
+                    android:hint="Fecha"
+                    android:padding="3dp"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
 
-                <Button
-                    android:id="@+id/boton1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:onClick="openCalendar"
-                    android:background="@android:color/transparent"/>
 
-            </RelativeLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_margin="5dp">
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_alarm" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="50dp"
+                            android:text="Elige la hora" />
+
+                        <Button
+                            android:id="@+id/boton2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:onClick="openCalendar" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvHora"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_round"
+                    android:hint="Hora"
+                    android:padding="3dp"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/tv"
-            android:layout_width="140dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_round"
-            android:hint="Fecha"
-            android:padding="3dp"
-            android:textColor="@color/black"
-            android:textSize="16dp"
-            />
 
 
-
-
-        <LinearLayout
-            android:layout_width="150dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="5dp"
-            android:orientation="horizontal">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginLeft="10dp">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_alarm"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
-                    android:text="Elige la hora"
-                    android:layout_gravity="center"/>
-
-                <Button
-                    android:id="@+id/boton2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:onClick="openCalendar"
-                    android:background="@android:color/transparent"/>
-
-            </RelativeLayout>
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/tvHora"
-            android:layout_width="140dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_round"
-            android:hint="Hora"
-            android:padding="3dp"
-            android:textColor="@color/black"
-            android:textSize="16dp"
-            />
 
 
         <View
@@ -172,12 +201,11 @@
             android:id="@+id/GuardarTarea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="end"
             android:text="Guardar"
-            android:textAllCaps="false"
-            android:layout_gravity="end"/>
+            android:textAllCaps="false" />
 
     </LinearLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
