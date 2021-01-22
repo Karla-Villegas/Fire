@@ -8,10 +8,12 @@ import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -19,7 +21,8 @@ import android.widget.TimePicker;
 import java.util.Calendar;
 public class ScheduleActivity extends AppCompatActivity {
 
-    TextView tv, tvhora, titulo_agenda;
+    TextView tvfecha, tvhora, titulo_agenda;
+    EditText nombretarea, descripcion_tarea;
     Button guardar;
     private Spinner spinerCategorias;
 
@@ -30,10 +33,12 @@ public class ScheduleActivity extends AppCompatActivity {
 
         Intent i = getIntent();
 
-        tv = (TextView) findViewById(R.id.tv);
+        tvfecha = (TextView) findViewById(R.id.tvfecha);
         tvhora = (TextView) findViewById(R.id.tvHora);
         guardar = (Button) findViewById(R.id.GuardarTarea);
-        titulo_agenda = findViewById(R.id.titulo_agenda);
+        nombretarea = findViewById(R.id.nombre_tarea);
+        descripcion_tarea = findViewById(R.id.descripcion_tarea);
+
 
         //agregar tipografia
         Typeface DisplayRegular = Typeface.createFromAsset(getAssets(),"font/SFUIDisplayRegular.otf");
@@ -42,11 +47,24 @@ public class ScheduleActivity extends AppCompatActivity {
 
         //llenar spinner categorias
         spinerCategorias = (Spinner) findViewById(R.id.SpCategorias);
-        String[] categorias = {"Ejercicio", "Social", "Personal", "categoria 1", "categoria 2", "categoria 3"};
+        String[] categorias = {"Ejercicio", "Social", "Personal"};
         spinerCategorias.setAdapter(new ArrayAdapter<String>(ScheduleActivity.this, android.R.layout.simple_spinner_dropdown_item, categorias));
 
 
+        guardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
     }
+
+    //obtener datos de los editText: nombre y descripción
+
+
+
+
 
     public void openCalendar(View view) {
         Calendar cal = Calendar.getInstance();
@@ -58,7 +76,7 @@ public class ScheduleActivity extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 String fecha = dayOfMonth + "/" + (month +1) + "/" + year;
-                tv.setText(fecha);
+                tvfecha.setText(fecha);
 
             }
         }, anio, mes, dia);

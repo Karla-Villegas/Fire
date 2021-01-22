@@ -5,6 +5,8 @@ public class User {
     int id;
     String nombre, usuario, contraseña;
 
+    public User() {}
+
     public User(String nombre, String usuario, String contraseña) {
         this.nombre = nombre;
         this.usuario = usuario;
