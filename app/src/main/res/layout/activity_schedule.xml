@@ -56,9 +56,19 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/button_round"
-            android:hint="Descripción de tarea"
+            android:hint="titulo de tarea"
             android:inputType="text"
             android:padding="3dp" />
+
+        <EditText
+            android:id="@+id/nombre_tarea"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/button_round"
+            android:hint="detalles de tarea"
+            android:inputType="text"
+            android:padding="3dp"
+            android:layout_marginTop="16dp"/>
 
 
         <LinearLayout
@@ -186,6 +196,29 @@
 
         </LinearLayout>
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="3"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Categoria"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:textColor="@color/black"/>
+
+            <Spinner
+                android:id="@+id/SpCategorias"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"/>
+
+        </LinearLayout>
 
 
 
