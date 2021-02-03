@@ -33,17 +33,15 @@ public class ScheduleActivity extends AppCompatActivity {
 
         Intent i = getIntent();
 
-        tvfecha = (TextView) findViewById(R.id.tvfecha);
+        tvfecha = (TextView) findViewById(R.id.tvFecha);
         tvhora = (TextView) findViewById(R.id.tvHora);
         guardar = (Button) findViewById(R.id.GuardarTarea);
-        nombretarea = findViewById(R.id.nombre_tarea);
-        descripcion_tarea = findViewById(R.id.descripcion_tarea);
+        nombretarea = findViewById(R.id.TituloTarea);
+        descripcion_tarea = findViewById(R.id.Descripcion);
 
 
         //agregar tipografia
-        Typeface DisplayRegular = Typeface.createFromAsset(getAssets(),"font/SFUIDisplayRegular.otf");
-        titulo_agenda = findViewById(R.id.titulo_agenda);
-        titulo_agenda.setTypeface(DisplayRegular);
+
 
         //llenar spinner categorias
         spinerCategorias = (Spinner) findViewById(R.id.SpCategorias);

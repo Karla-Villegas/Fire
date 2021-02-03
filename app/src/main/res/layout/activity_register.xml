@@ -1,115 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/main_header_selector">
+    >
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:layout_height="match_parent">
 
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/logo"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"/>
-
-        <TextView
-            android:id="@+id/Txt_titulo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Registro"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:textStyle="bold"/>
-
-
-        <TextView
-            android:id="@+id/nombre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="32dp"
-            android:text="Nombre"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:fontFamily="sans-serif-light"/>
-
-        <EditText
-            android:id="@+id/txt_RegNombre"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
-            android:backgroundTint="@color/white"
-            android:inputType="text"
-            />
-
-        <TextView
-            android:id="@+id/usuario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="24dp"
-            android:text="Usuario"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:fontFamily="sans-serif-light"/>
-
-        <EditText
-            android:id="@+id/txt_RegUsuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
-            android:backgroundTint="@color/white"
-            android:inputType="text"/>
+            android:layout_height="match_parent">
 
 
-        <TextView
-            android:id="@+id/contraseña"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="24dp"
-            android:text="Contraseña"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:fontFamily="sans-serif-light"/>
-
-        <EditText
-            android:id="@+id/txt_RegContraseña"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="24dp"
-            android:layout_marginLeft="24dp"
-            android:backgroundTint="@color/white"
-            android:inputType="textPassword"/>
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@drawable/iu_agenda"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
-        <Button
-            android:id="@+id/btn_registrar"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:text="Registrar"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="90dp"
-
-            />
-
-
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
+            <TextView
+                android:id="@+id/Txt_titulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registro"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/view2"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-    </LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginBottom="16dp"
+                android:elevation="10dp"
+                app:cardElevation="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Txt_titulo">
 
-</ScrollView>
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:id="@+id/nombre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginTop="32dp"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Nombre"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/txt_RegNombre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="24dp"
+                        android:backgroundTint="@color/black"
+                        android:inputType="text" />
+
+                    <TextView
+                        android:id="@+id/usuario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginTop="14dp"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Usuario"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/txt_RegUsuario"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="24dp"
+                        android:backgroundTint="@color/black"
+                        android:inputType="text" />
+
+
+                    <TextView
+                        android:id="@+id/contraseña"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginTop="14dp"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Contraseña"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/txt_RegContraseña"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="24dp"
+                        android:backgroundTint="@color/black"
+                        android:inputType="textPassword" />
+
+
+                    <Button
+                        android:id="@+id/btn_registrar"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="32dp"
+                        android:text="Registrar"
+                        android:textAllCaps="false" />
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 
 

@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
         /*............................................*/
 
 
-        textView = findViewById(R.id.textView);
         Typeface DisplayRegular = Typeface.createFromAsset(getAssets(),"font/SFUIDisplayRegular.otf");
         textView = findViewById(R.id.textView);
         textView.setTypeface(DisplayRegular);
