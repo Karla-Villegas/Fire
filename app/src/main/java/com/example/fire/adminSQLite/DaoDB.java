@@ -16,7 +16,7 @@ public class DaoDB extends SQLiteOpenHelper {
     public static final String CREAR_TABLA_USUARIOS = "CREATE TABLE IF NOT EXISTS usuarios " +
                                                         "(id_user INTEGER primary key autoincrement, nombre TEXT, usuario TEXT, contraseña TEXT)";
 
-
+    public static final String CREAR_TABLA_TAREAS = "CREATE TABLE IF NOT EXISTS tareas (id_tarea INTEGER primary key autoincrement, nombre TEXT, descripcion TEXT, fecha DATE, hora TIME)";
 
     public DaoDB(Context context) {
         super(context, NOMBRE_BD, null, Version);
@@ -26,6 +26,7 @@ public class DaoDB extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         db.execSQL(CREAR_TABLA_USUARIOS);
+        db.execSQL(CREAR_TABLA_TAREAS);
 
     }
 
@@ -35,7 +36,7 @@ public class DaoDB extends SQLiteOpenHelper {
     }
 
     /*.......METODO PARA AGREGAR USUARIOS.........*/
-    public void AgreagarUser(String nombre, String usuario, String contraseña){
+    public void AgregarUser(String nombre, String usuario, String contraseña){
 
         SQLiteDatabase BaseDatos = getWritableDatabase();
         ContentValues valores = new ContentValues();
@@ -54,5 +55,18 @@ public class DaoDB extends SQLiteOpenHelper {
         mcursor = this.getReadableDatabase().query("usuarios", new String[]{"nombre", "usuario", "contraseña"},
                 "usuario like '"+usuario+"' and contraseña like '"+contraseña+"'", null, null, null, null);
         return mcursor;
+    }
+
+    public void AgregarChores(String nombre, String descripcion, String fecha, String hora){
+
+        SQLiteDatabase BaseDatos = getWritableDatabase();
+        ContentValues valores = new ContentValues();
+        valores.put("nombre", nombre);
+        valores.put("descripcion", descripcion);
+        valores.put("fecha", fecha);
+        valores.put("hora", hora);
+
+        BaseDatos.insert("tareas", null, valores);
+        BaseDatos.close();
     }
 }

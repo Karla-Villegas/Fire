@@ -42,12 +42,13 @@ public class RegisterActivity extends AppCompatActivity {
         btn_registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                daoDB.AgreagarUser(
+                daoDB.AgregarUser(
                         txt_RegNombre.getText().toString(),
                         txt_RegUsuario.getText().toString(),
                         txt_RegContraseña.getText().toString()
                 );
                 Toast.makeText(RegisterActivity.this, "agregado correctamente", Toast.LENGTH_LONG).show();
+
 
                 Intent i = new Intent(RegisterActivity.this, MainActivity.class);
                 RegisterActivity.this.startActivity(i);

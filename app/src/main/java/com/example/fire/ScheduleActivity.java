@@ -17,12 +17,17 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
+import com.example.fire.adminSQLite.DaoDB;
+import com.example.fire.adminSQLite.RegisterActivity;
+
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 public class ScheduleActivity extends AppCompatActivity {
 
-    TextView tvfecha, tvhora, titulo_agenda;
     EditText nombretarea, descripcion_tarea;
+    TextView tvfecha, tvhora;
     Button guardar;
     private Spinner spinerCategorias;
 
@@ -33,14 +38,11 @@ public class ScheduleActivity extends AppCompatActivity {
 
         Intent i = getIntent();
 
-        tvfecha = (TextView) findViewById(R.id.tvFecha);
-        tvhora = (TextView) findViewById(R.id.tvHora);
-        guardar = (Button) findViewById(R.id.GuardarTarea);
         nombretarea = findViewById(R.id.TituloTarea);
         descripcion_tarea = findViewById(R.id.Descripcion);
+        tvfecha = (TextView) findViewById(R.id.tvFecha);
+        tvhora = (TextView) findViewById(R.id.tvHora);
 
-
-        //agregar tipografia
 
 
         //llenar spinner categorias
@@ -48,11 +50,19 @@ public class ScheduleActivity extends AppCompatActivity {
         String[] categorias = {"Ejercicio", "Social", "Personal"};
         spinerCategorias.setAdapter(new ArrayAdapter<String>(ScheduleActivity.this, android.R.layout.simple_spinner_dropdown_item, categorias));
 
-
+        guardar = (Button) findViewById(R.id.GuardarTarea);
+        final DaoDB daoDB = new DaoDB(getApplicationContext());
         guardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                daoDB.AgregarChores(
+                        nombretarea.getText().toString(),
+                        descripcion_tarea.getText().toString(),
+                        tvfecha.getText().toString(),
+                        tvhora.getText().toString()
+                );
+                Toast.makeText(ScheduleActivity.this, "agregado correctamente", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -73,7 +83,8 @@ public class ScheduleActivity extends AppCompatActivity {
         DatePickerDialog dpd = new DatePickerDialog(ScheduleActivity.this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                String fecha = dayOfMonth + "/" + (month +1) + "/" + year;
+                String fecha = dayOfMonth + "/" + (month + 1) + "/" + year;
+
                 tvfecha.setText(fecha);
 
             }
@@ -91,7 +102,7 @@ public class ScheduleActivity extends AppCompatActivity {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 
-                tvhora.setText(hourOfDay + ":" + minute);
+                tvhora.setText(String.format("%02d:%02d", hourOfDay, minute));
 
             }
         }, hora, minuto, false);

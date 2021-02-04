@@ -91,16 +91,19 @@
                 <Button
                     android:id="@+id/btnFecha"
                     android:layout_width="wrap_content"
-                    android:layout_height="35dp"
+                    android:layout_height="40dp"
                     android:layout_margin="7dp"
                     android:text="Fecha"
-                    android:textAllCaps="false" />
+                    android:textAllCaps="false"
+                    android:onClick="openCalendar"/>
 
                 <TextView
                     android:id="@+id/tvFecha"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:padding="5dp"
                     android:layout_marginLeft="10dp"
                     android:background="#e2e2e2"
                     android:textColor="@color/black" />
@@ -119,10 +122,11 @@
                 <Button
                     android:id="@+id/btnHora"
                     android:layout_width="wrap_content"
-                    android:layout_height="35dp"
+                    android:layout_height="40dp"
                     android:layout_margin="7dp"
                     android:text="Hora"
-                    android:textAllCaps="false" />
+                    android:textAllCaps="false"
+                    android:onClick="openWatch"/>
 
                 <TextView
                     android:id="@+id/tvHora"
@@ -130,8 +134,11 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginLeft="10dp"
+                    android:textAlignment="center"
+                    android:padding="5dp"
                     android:background="#e2e2e2"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    />
 
             </LinearLayout>
 

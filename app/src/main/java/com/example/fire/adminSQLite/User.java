@@ -13,15 +13,6 @@ public class User {
         this.contraseña = contraseña;
     }
 
-    public boolean isNull(){
-
-        if(nombre.equals("")&&usuario.equals("")&&contraseña.equals("")){
-            return false;
-        }else {
-            return true;
-        }
-
-    }
 
     @Override
     public String toString() {
