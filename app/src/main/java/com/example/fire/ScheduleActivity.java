@@ -5,7 +5,9 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
@@ -43,37 +45,25 @@ public class ScheduleActivity extends AppCompatActivity {
         tvfecha = (TextView) findViewById(R.id.tvFecha);
         tvhora = (TextView) findViewById(R.id.tvHora);
 
-
-
         //llenar spinner categorias
         spinerCategorias = (Spinner) findViewById(R.id.SpCategorias);
         String[] categorias = {"Ejercicio", "Social", "Personal"};
         spinerCategorias.setAdapter(new ArrayAdapter<String>(ScheduleActivity.this, android.R.layout.simple_spinner_dropdown_item, categorias));
 
         guardar = (Button) findViewById(R.id.GuardarTarea);
-        final DaoDB daoDB = new DaoDB(getApplicationContext());
         guardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                daoDB.AgregarChores(
-                        nombretarea.getText().toString(),
-                        descripcion_tarea.getText().toString(),
-                        tvfecha.getText().toString(),
-                        tvhora.getText().toString()
-                );
+                registrarTareas();
                 Toast.makeText(ScheduleActivity.this, "agregado correctamente", Toast.LENGTH_LONG).show();
             }
         });
 
-    }
+        createNotificationChanel();
 
-    //obtener datos de los editText: nombre y descripción
+    } //..................FIN DEL METODO ONCREATE..............
 
-
-
-
-
+    //metodo para levantar calendario
     public void openCalendar(View view) {
         Calendar cal = Calendar.getInstance();
         int anio = cal.get(Calendar.YEAR);
@@ -92,8 +82,8 @@ public class ScheduleActivity extends AppCompatActivity {
         dpd.show();
     }
 
+    //metodo para levantar reloj
     public void openWatch(View view) {
-
         Calendar c = Calendar.getInstance();
         int hora = c.get(Calendar.HOUR_OF_DAY);
         int minuto = c.get(Calendar.MINUTE);
@@ -109,5 +99,39 @@ public class ScheduleActivity extends AppCompatActivity {
         tpd.show();
     }
 
+    //METODO PARA REGISTRAR TAREAS
+    final DaoDB daoDB = new DaoDB(this);
+    public void registrarTareas(){
+        SQLiteDatabase BaseDatos = daoDB.getWritableDatabase();
+
+            String tarea_nombre = nombretarea.getText().toString();
+            String tarea_descripcion = descripcion_tarea.getText().toString();
+            String tarea_tvfecha = tvfecha.getText().toString();
+            String tarea_tvhora = tvhora.getText().toString();
+
+        if(!tarea_nombre.isEmpty() && !tarea_descripcion.isEmpty() && !tarea_tvfecha.isEmpty() && !tarea_tvhora.isEmpty()){
+            ContentValues datosTarea = new ContentValues();
+            datosTarea.put("nombre", tarea_nombre);
+            datosTarea.put("descripcion", tarea_descripcion);
+            datosTarea.put("fecha", tarea_tvfecha);
+            datosTarea.put("hora", tarea_tvhora);
+
+            BaseDatos.insert("tareas", null, datosTarea);
+            BaseDatos.close();
+
+            nombretarea.setText("");
+            descripcion_tarea.setText("");
+            tvfecha.setText("");
+            tvhora.setText("");
+            Toast.makeText(ScheduleActivity.this, "agregado correctamente", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(ScheduleActivity.this, "Debes llenar todos los campos!!", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    //.......METODO PARA CREAR NOTIFICACION...........
+    private void createNotificationChanel() {
+
+    }
 
 }

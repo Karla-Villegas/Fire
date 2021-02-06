@@ -3,14 +3,14 @@ package com.example.fire.adminSQLite;
 public class User {
 
     int id;
-    String nombre, usuario, contraseña;
+    String nombre, usuario, contrasenia;
 
     public User() {}
 
-    public User(String nombre, String usuario, String contraseña) {
+    public User(String nombre, String usuario, String contrasenia) {
         this.nombre = nombre;
         this.usuario = usuario;
-        this.contraseña = contraseña;
+        this.contrasenia = contrasenia;
     }
 
 
@@ -20,7 +20,7 @@ public class User {
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", usuario='" + usuario + '\'' +
-                ", contraseña='" + contraseña;
+                ", contrasenia='" + contrasenia;
     }
 
     public int getId() {
@@ -47,11 +47,11 @@ public class User {
         this.usuario = usuario;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasenia() {
+        return contrasenia;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
     }
 }

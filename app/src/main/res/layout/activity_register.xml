@@ -128,7 +128,7 @@
                         android:textSize="16sp" />
 
                     <EditText
-                        android:id="@+id/txt_RegContraseña"
+                        android:id="@+id/txt_RegContrasenia"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="24dp"

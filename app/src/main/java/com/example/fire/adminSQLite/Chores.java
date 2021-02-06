@@ -10,7 +10,7 @@ public class Chores {
     public Chores(int id, String nombre, String descripcion, String fecha, String hora) {
         this.id = id;
         this.nombre = nombre;
-        this.descripcion = nombre;
+        this.descripcion = descripcion;
         this.fecha = fecha;
         this.hora = hora;
     }
