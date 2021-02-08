@@ -3,10 +3,14 @@ package com.example.fire;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.AlarmManager;
 import android.app.DatePickerDialog;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -25,6 +29,7 @@ import com.example.fire.adminSQLite.DaoDB;
 import com.example.fire.adminSQLite.RegisterActivity;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 public class ScheduleActivity extends AppCompatActivity {
 
@@ -32,6 +37,10 @@ public class ScheduleActivity extends AppCompatActivity {
     TextView tvfecha, tvhora;
     Button guardar;
     private Spinner spinerCategorias;
+    private Cursor fila;
+    private String alarma, descripcion, titulo;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +49,10 @@ public class ScheduleActivity extends AppCompatActivity {
 
         Intent i = getIntent();
 
-        nombretarea = findViewById(R.id.TituloTarea);
+        nombretarea       = findViewById(R.id.TituloTarea);
         descripcion_tarea = findViewById(R.id.Descripcion);
-        tvfecha = (TextView) findViewById(R.id.tvFecha);
-        tvhora = (TextView) findViewById(R.id.tvHora);
+        tvfecha           = findViewById(R.id.tvFecha);
+        tvhora            = findViewById(R.id.tvHora);
 
         //llenar spinner categorias
         spinerCategorias = (Spinner) findViewById(R.id.SpCategorias);
@@ -55,20 +64,22 @@ public class ScheduleActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 registrarTareas();
+                servicio();
                 Toast.makeText(ScheduleActivity.this, "agregado correctamente", Toast.LENGTH_LONG).show();
             }
         });
 
-        createNotificationChanel();
+
+
 
     } //..................FIN DEL METODO ONCREATE..............
 
     //metodo para levantar calendario
     public void openCalendar(View view) {
         Calendar cal = Calendar.getInstance();
-        int anio = cal.get(Calendar.YEAR);
-        int mes = cal.get(Calendar.MONTH);
-        int dia = cal.get(Calendar.DAY_OF_MONTH);
+        int anio     = cal.get(Calendar.YEAR);
+        int mes      = cal.get(Calendar.MONTH);
+        int dia      = cal.get(Calendar.DAY_OF_MONTH);
 
         DatePickerDialog dpd = new DatePickerDialog(ScheduleActivity.this, new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -85,7 +96,7 @@ public class ScheduleActivity extends AppCompatActivity {
     //metodo para levantar reloj
     public void openWatch(View view) {
         Calendar c = Calendar.getInstance();
-        int hora = c.get(Calendar.HOUR_OF_DAY);
+        int hora   = c.get(Calendar.HOUR_OF_DAY);
         int minuto = c.get(Calendar.MINUTE);
 
         TimePickerDialog tpd = new TimePickerDialog(ScheduleActivity.this, new TimePickerDialog.OnTimeSetListener() {
@@ -99,15 +110,16 @@ public class ScheduleActivity extends AppCompatActivity {
         tpd.show();
     }
 
+
     //METODO PARA REGISTRAR TAREAS
     final DaoDB daoDB = new DaoDB(this);
     public void registrarTareas(){
         SQLiteDatabase BaseDatos = daoDB.getWritableDatabase();
 
-            String tarea_nombre = nombretarea.getText().toString();
+            String tarea_nombre      = nombretarea.getText().toString();
             String tarea_descripcion = descripcion_tarea.getText().toString();
-            String tarea_tvfecha = tvfecha.getText().toString();
-            String tarea_tvhora = tvhora.getText().toString();
+            String tarea_tvfecha     = tvfecha.getText().toString();
+            String tarea_tvhora      = tvhora.getText().toString();
 
         if(!tarea_nombre.isEmpty() && !tarea_descripcion.isEmpty() && !tarea_tvfecha.isEmpty() && !tarea_tvhora.isEmpty()){
             ContentValues datosTarea = new ContentValues();
@@ -129,9 +141,19 @@ public class ScheduleActivity extends AppCompatActivity {
         }
     }
 
-    //.......METODO PARA CREAR NOTIFICACION...........
-    private void createNotificationChanel() {
-
+    //SERVICIO DE LA ALARMA
+    public void servicio() {
+        Intent intent_service_alarm = new Intent(getApplicationContext(), MyAlarmReceiver.class);
+        final PendingIntent pIntent = PendingIntent.getBroadcast(this, MyAlarmReceiver.REQUEST_CODE, intent_service_alarm, PendingIntent.FLAG_UPDATE_CURRENT);
+        long firstMillis = System.currentTimeMillis(); //first run of alarm is immediate // aranca la palicacion
+        int intervalMillis = 1 * 3 * 1000; //3 segundos
+        AlarmManager alarm = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
+        alarm.setInexactRepeating(AlarmManager.RTC_WAKEUP, firstMillis, intervalMillis, pIntent);
     }
+
+
+
+
+
 
 }

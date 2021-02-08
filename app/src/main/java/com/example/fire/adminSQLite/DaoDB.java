@@ -29,6 +29,8 @@ public class DaoDB extends SQLiteOpenHelper {
 
     }
 
+
+
     /*.......METODO PARA VALIDAR USUARIOS.........*/
     public Cursor ConsultarUserPass(String usuario, String contrasenia) throws SQLException {
 
