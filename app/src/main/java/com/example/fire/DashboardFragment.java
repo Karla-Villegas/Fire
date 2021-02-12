@@ -9,9 +9,11 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,6 +33,10 @@ import java.util.ArrayList;
 
 public class DashboardFragment extends Fragment {
 
+    ArrayList<Chores> listTareas;
+    RecyclerView recyclerView;
+    DashboardAdapter adapter;
+
     Button agregar;
 
     public DashboardFragment() {
@@ -43,6 +49,17 @@ public class DashboardFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
+        final DaoDB daoDB = new DaoDB(getContext());
+        SQLiteDatabase db = daoDB.getReadableDatabase();
+        listTareas = new ArrayList<>();
+        recyclerView = v.findViewById(R.id.rv_tareas);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        consultarListaTareas();
+        adapter = new DashboardAdapter(listTareas);
+        recyclerView.setAdapter(adapter);
+
+
         // Intent del boton agragar tareas que lleva a la vista registro de tareas
         agregar = (Button) v.findViewById(R.id.BotonAgregar);
         agregar.setOnClickListener(new View.OnClickListener() {
@@ -54,8 +71,28 @@ public class DashboardFragment extends Fragment {
             }
         });
 
-
         return v;
+    }
+
+    private void consultarListaTareas() {
+
+        final DaoDB daoDB = new DaoDB(getContext());
+        SQLiteDatabase db = daoDB.getReadableDatabase();
+        Chores chores = null;
+        Cursor cursor = db.rawQuery("SELECT * FROM tareas", null);
+        while (cursor.moveToNext()){
+            chores = new Chores();
+            chores.setId(cursor.getInt(0));
+            chores.setNombre(cursor.getString(1));
+            chores.setDescripcion(cursor.getString(2));
+            chores.setFecha(cursor.getString(3));
+            chores.setHora(cursor.getString(4));
+
+            listTareas.add(chores);
+        }
+        Log.e("DATOS TAREAS", "REGISTROS" + listTareas);
+
+
     }
 
 
@@ -73,6 +110,11 @@ public class DashboardFragment extends Fragment {
         return fragment;
     }
 
-
-
+    @Override
+    public void onResume() {
+        consultarListaTareas();
+        adapter = new DashboardAdapter(listTareas);
+        recyclerView.setAdapter(adapter);
+        super.onResume();
+    }
 }

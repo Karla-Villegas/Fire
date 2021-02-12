@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 /*.......INTEN PRINCIPAL.......*/
                 Intent intentRegistro = new Intent(MainActivity.this, RegisterActivity.class);
                 startActivity(intentRegistro);
+
             }
         });
         /*............................................*/
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 if (cursor.getCount()> 0){
                     Intent i = new Intent(MainActivity.this, PrincipalActivity.class);
                     MainActivity.this.startActivity(i);
+                    finish();
                 }else{
                     Toast.makeText(getApplicationContext(), "usuario y/o password incorrectos", Toast.LENGTH_LONG).show();
                 }

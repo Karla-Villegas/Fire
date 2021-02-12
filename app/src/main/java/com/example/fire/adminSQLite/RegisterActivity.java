@@ -72,6 +72,7 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(RegisterActivity.this, "agregado correctamente", Toast.LENGTH_LONG).show();
             Intent i = new Intent(RegisterActivity.this, MainActivity.class);
             RegisterActivity.this.startActivity(i);
+            finish();
 
         } else {
             Toast.makeText(RegisterActivity.this, "Debes llenar todos los campos!!", Toast.LENGTH_LONG).show();

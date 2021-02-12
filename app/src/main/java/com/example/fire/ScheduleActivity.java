@@ -64,8 +64,9 @@ public class ScheduleActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 registrarTareas();
-                servicio();
                 Toast.makeText(ScheduleActivity.this, "agregado correctamente", Toast.LENGTH_LONG).show();
+                onSupportNavigateUp();
+
             }
         });
 
@@ -73,6 +74,12 @@ public class ScheduleActivity extends AppCompatActivity {
 
 
     } //..................FIN DEL METODO ONCREATE..............
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return false;
+    }
 
     //metodo para levantar calendario
     public void openCalendar(View view) {
@@ -140,6 +147,9 @@ public class ScheduleActivity extends AppCompatActivity {
             Toast.makeText(ScheduleActivity.this, "Debes llenar todos los campos!!", Toast.LENGTH_LONG).show();
         }
     }
+
+
+
 
     //SERVICIO DE LA ALARMA
     public void servicio() {
