@@ -7,11 +7,13 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -27,6 +29,8 @@ public class SettingsFragment extends Fragment {
     Button ButtonCerrarSesion, ButtonEditar;
     TextView txtnombre, txtusuario;
     ArrayList<User> listUser;
+    RecyclerView recyclerView;
+    Adapter adapter;
 
 
 
@@ -55,15 +59,8 @@ public class SettingsFragment extends Fragment {
             }
         });
 
-
-
-
-
-
+        consultarUser();
         return view;
-
-
-
 
     }
 
@@ -80,17 +77,12 @@ public class SettingsFragment extends Fragment {
             user.setNombre(cursor.getString(1));
             user.setUsuario(cursor.getString(2));
             user.setContrasenia(cursor.getString(3));
-
-
             listUser.add(user);
-
-
         }
         Log.e("DATOS TAREAS", "REGISTROS" + listUser);
 
 
     }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

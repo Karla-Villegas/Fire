@@ -112,6 +112,7 @@ public class DashboardFragment extends Fragment {
 
     @Override
     public void onResume() {
+        adapter.clear();
         consultarListaTareas();
         adapter = new DashboardAdapter(listTareas);
         recyclerView.setAdapter(adapter);
