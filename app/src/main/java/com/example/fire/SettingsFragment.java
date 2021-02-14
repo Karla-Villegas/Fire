@@ -59,7 +59,7 @@ public class SettingsFragment extends Fragment {
             }
         });
 
-        consultarUser();
+//        consultarUser();
         return view;
 
     }
