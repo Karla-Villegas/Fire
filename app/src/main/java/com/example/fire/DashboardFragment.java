@@ -82,7 +82,7 @@ public class DashboardFragment extends Fragment {
         Cursor cursor = db.rawQuery("SELECT * FROM tareas", null);
         while (cursor.moveToNext()){
             chores = new Chores();
-            chores.setId(cursor.getInt(0));
+            chores.setId_tareas(cursor.getInt(0));
             chores.setNombre(cursor.getString(1));
             chores.setDescripcion(cursor.getString(2));
             chores.setFecha(cursor.getString(3));
@@ -116,6 +116,7 @@ public class DashboardFragment extends Fragment {
         consultarListaTareas();
         adapter = new DashboardAdapter(listTareas);
         recyclerView.setAdapter(adapter);
+
         super.onResume();
     }
 }

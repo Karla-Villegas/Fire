@@ -2,33 +2,34 @@ package com.example.fire.adminSQLite;
 
 public class User {
 
-    int id;
+    int id_user;
     String nombre, usuario, contrasenia;
 
     public User() {}
 
-    public User(String nombre, String usuario, String contrasenia) {
+    public User(int id_user, String nombre, String usuario, String contrasenia) {
+        this.id_user = id_user;
         this.nombre = nombre;
         this.usuario = usuario;
         this.contrasenia = contrasenia;
     }
 
-
     @Override
     public String toString() {
-        return "RegistroUser{" +
-                "id=" + id +
+        return "User{" +
+                "id_user=" + id_user +
                 ", nombre='" + nombre + '\'' +
                 ", usuario='" + usuario + '\'' +
-                ", contrasenia='" + contrasenia;
+                ", contrasenia='" + contrasenia + '\'' +
+                '}';
     }
 
-    public int getId() {
-        return id;
+    public int getId_user() {
+        return id_user;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId_user(int id_user) {
+        this.id_user = id_user;
     }
 
     public String getNombre() {

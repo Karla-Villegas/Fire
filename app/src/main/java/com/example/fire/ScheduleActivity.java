@@ -56,8 +56,9 @@ public class ScheduleActivity extends AppCompatActivity {
 
         //llenar spinner categorias
         spinerCategorias = (Spinner) findViewById(R.id.SpCategorias);
-        String[] categorias = {"Medico", "Social", "Personal", "Recreacion", "Estudiar", "Deporte"};
-        spinerCategorias.setAdapter(new ArrayAdapter<String>(ScheduleActivity.this, android.R.layout.simple_spinner_dropdown_item, categorias));
+
+       /* String[] categorias = {"Medico", "Social", "Personal", "Recreacion", "Estudiar", "Deporte"};
+        spinerCategorias.setAdapter(new ArrayAdapter<String>(ScheduleActivity.this, android.R.layout.simple_spinner_dropdown_item, categorias));*/
 
 
         guardar = findViewById(R.id.GuardarTarea);
@@ -150,6 +151,9 @@ public class ScheduleActivity extends AppCompatActivity {
 
 
 
+
+
+
     //SERVICIO DE LA ALARMA
     public void servicio() {
         Intent intent_service_alarm = new Intent(getApplicationContext(), MyAlarmReceiver.class);
@@ -158,6 +162,7 @@ public class ScheduleActivity extends AppCompatActivity {
         int intervalMillis = 1 * 3 * 1000; //3 segundos
         AlarmManager alarm = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
         alarm.setInexactRepeating(AlarmManager.RTC_WAKEUP, firstMillis, intervalMillis, pIntent);
+        Log.e("ALARMA:", "EMPEZO EL CONTEO");
     }
 
 

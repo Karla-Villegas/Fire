@@ -73,7 +73,7 @@ public class SettingsFragment extends Fragment {
         Cursor cursor = db.rawQuery("SELECT * FROM usuarios", null);
         while (cursor.moveToNext()){
             user = new User();
-            user.setId(cursor.getInt(0));
+            user .setId_user(cursor.getInt(0));
             user.setNombre(cursor.getString(1));
             user.setUsuario(cursor.getString(2));
             user.setContrasenia(cursor.getString(3));

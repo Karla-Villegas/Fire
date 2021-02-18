@@ -2,25 +2,29 @@ package com.example.fire.adminSQLite;
 
 public class Chores {
 
-    int id;
+    int id_tareas;
     String nombre, descripcion, fecha, hora;
+    int id_user;
+    int id_categorias;
 
     public Chores() {}
 
-    public Chores(int id, String nombre, String descripcion, String fecha, String hora) {
-        this.id = id;
+    public Chores(int id_tareas, String nombre, String descripcion, String fecha, String hora, int id_user, int id_categorias) {
+        this.id_tareas = id_tareas;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.fecha = fecha;
         this.hora = hora;
+        this.id_user = id_user;
+        this.id_categorias = id_categorias;
     }
 
-    public int getId() {
-        return id;
+    public int getId_tareas() {
+        return id_tareas;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId_tareas(int id_tareas) {
+        this.id_tareas = id_tareas;
     }
 
     public String getNombre() {
@@ -55,5 +59,19 @@ public class Chores {
         this.hora = hora;
     }
 
+    public int getId_user() {
+        return id_user;
+    }
 
+    public void setId_user(int id_user) {
+        this.id_user = id_user;
+    }
+
+    public int getId_categorias() {
+        return id_categorias;
+    }
+
+    public void setId_categorias(int id_categorias) {
+        this.id_categorias = id_categorias;
+    }
 }
