@@ -12,6 +12,8 @@ public class DaoDB extends SQLiteOpenHelper {
     public static final int Version = 1;
     public static final String CREAR_TABLA_USUARIOS = "CREATE TABLE IF NOT EXISTS usuarios (id_user INTEGER primary key autoincrement, nombre TEXT, usuario TEXT, contrasenia TEXT)";
     public static final String CREAR_TABLA_TAREAS = "CREATE TABLE IF NOT EXISTS tareas (id_tarea INTEGER primary key autoincrement, nombre TEXT, descripcion TEXT, fecha DATE, hora TIME)";
+    public static final String CREAR_TABLA_CATEGORIAS = "CREATE TABLE IF NOT EXISTS categorias (id_categorias INTEGER primary key autoincrement, nombre TEXT)";
+    public static final String INSERT_CATEGORIAS = "INSERT INTO categorias (nombre) VALUES ('Eventos'), ('Personal'), ('Salud'), ('Deporte'), ('Meta')";
 
     public DaoDB(Context context) {
         super(context, NOMBRE_BD, null, Version);
@@ -21,6 +23,8 @@ public class DaoDB extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREAR_TABLA_USUARIOS);
         db.execSQL(CREAR_TABLA_TAREAS);
+        db.execSQL(CREAR_TABLA_CATEGORIAS);
+        db.execSQL(INSERT_CATEGORIAS);
 
     }
 

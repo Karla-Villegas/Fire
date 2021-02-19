@@ -3,4 +3,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="textoPrincipal">Se engloban las alteraciones de una o varias de las funciones cognitivas para procesar o recordar la informacion, que incluyen las areas de la percepcion, la atencion, el lenguaje o la memoria</string>
+    <string name="channel_name">nombre canal</string>
+    <string name="channel_description">descripcion canal</string>
 </resources>

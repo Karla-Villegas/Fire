@@ -1,4 +1,5 @@
 package com.example.fire;
+/*
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -100,3 +101,4 @@ public class MyAlarmReceiver extends BroadcastReceiver {
 
 
 }
+*/
